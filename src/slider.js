@@ -152,18 +152,6 @@ angular.module('ui.slider', []).value('uiSliderConfig',{}).directive('uiSlider',
                             ngModel.$viewValue[1] = options.max;
                         }
 
-                        // Check min and max range values
-                        if (ngModel.$viewValue[0] > ngModel.$viewValue[1]) {
-                            // Min value should be less to equal to max value
-                            if (prevRangeValues.min >= ngModel.$viewValue[1]) {
-                                ngModel.$viewValue[1] = prevRangeValues.min;
-                            }
-                            // Max value should be less to equal to min value
-                            if (prevRangeValues.max <= ngModel.$viewValue[0]) {
-                                ngModel.$viewValue[0] = prevRangeValues.max;
-                            }
-                        }
-
                         // Store values for later user
                         prevRangeValues.min = ngModel.$viewValue[0];
                         prevRangeValues.max = ngModel.$viewValue[1];
